@@ -9,6 +9,7 @@ source:
   sha256: 3a12c450b001bdf895b30ae818d4d6d3f1552096b8c995f0fe0c74bef04d1fc3
   patches:
     - patches/0001-remove-obsolete-if-guards-that-confuse-MSVC.patch
+    - patches/0002-also-install-blist.test.patch
 
 build:
   number: 1
@@ -27,9 +28,10 @@ test:
   imports:
     - blist
   source_files:
-    - blist/test/*
+    # must declare test script (not packaged in blist itself)
     - test_blist.py
   commands:
+    # running this needs patch 0002, otherwise blist.test cannot be imported
     - python test_blist.py
 
 about:
