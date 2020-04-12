@@ -9,15 +9,16 @@ source:
   sha256: 3a12c450b001bdf895b30ae818d4d6d3f1552096b8c995f0fe0c74bef04d1fc3
   patches:
     - patches/0001-remove-obsolete-if-guards-that-confuse-MSVC.patch
+    - patches/0002-also-install-blist.test.patch
+    - patches/0003-make-__iter__-PEP-479-compatible.patch
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
   host:
     - python
     - pip
@@ -27,8 +28,12 @@ requirements:
 test:
   imports:
     - blist
-  # commands:
-  #  - python ./test_blist.py
+  source_files:
+    # must declare test script (not packaged in blist itself)
+    - test_blist.py
+  commands:
+    # running this needs patch 0002, otherwise blist.test cannot be imported
+    - python test_blist.py
 
 about:
   home: https://github.com/DanielStutzbach/blist
@@ -38,7 +43,6 @@ about:
   license_file: LICENSE
   summary: 'A list-like type with better asymptotic performance and similar performance on small lists '
 
-  # The remaining entries in this section are optional, but recommended.
   description: |
     The blist is a drop-in replacement for the Python list that provides better performance
     when modifying large lists. The blist package also provides sortedlist, sortedset,
