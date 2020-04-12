@@ -1,7 +1,7 @@
 From 22822367b7c8b3b7e540da2715159f0f0d4d0edf Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Sun, 12 Apr 2020 20:11:42 +0200
-Subject: [PATCH 2/2] also install blist.test
+Subject: [PATCH 2/3] also install blist.test
 
 ---
  setup.py | 2 +-
