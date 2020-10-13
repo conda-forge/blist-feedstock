@@ -11,9 +11,10 @@ source:
     - patches/0001-remove-obsolete-if-guards-that-confuse-MSVC.patch
     - patches/0002-also-install-blist.test.patch
     - patches/0003-make-__iter__-PEP-479-compatible.patch
+    - patches/0004-compatibility-with-PEP-620.patch
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:

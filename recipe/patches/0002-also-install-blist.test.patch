@@ -1,7 +1,7 @@
-From 22822367b7c8b3b7e540da2715159f0f0d4d0edf Mon Sep 17 00:00:00 2001
+From 42d8fa9ae3f4e7d9951142f3e3e8a9e528c7679a Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Sun, 12 Apr 2020 20:11:42 +0200
-Subject: [PATCH 2/3] also install blist.test
+Subject: [PATCH 2/4] also install blist.test
 
 ---
  setup.py | 2 +-
@@ -21,5 +21,5 @@ index 5f1ff5d..0c53cdc 100755
        test_suite = "test_blist.test_suite",
        zip_safe = False, # zips are broken on cygwin for C extension modules
 -- 
-2.24.0.windows.2
+2.26.2.windows.1
 
