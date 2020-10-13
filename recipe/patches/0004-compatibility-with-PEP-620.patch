@@ -1,6 +1,6 @@
-From 778d38bdadafa028c60d7352ecf89f82e3cabf38 Mon Sep 17 00:00:00 2001
+From d816f8c30cc15b1a7cdc9fa855ff919359069fb3 Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
-Date: Tue, 13 Oct 2020 15:56:20 +0200
+Date: Tue, 13 Oct 2020 16:34:17 +0200
 Subject: [PATCH 4/4] compatibility with PEP 620
 
 ---
@@ -10,7 +10,7 @@ Subject: [PATCH 4/4] compatibility with PEP 620
  create mode 100644 blist/pythoncapi_compat.h
 
 diff --git a/blist/_blist.c b/blist/_blist.c
-index fee7b1a..7960926 100644
+index fee7b1a..9fdf178 100644
 --- a/blist/_blist.c
 +++ b/blist/_blist.c
 @@ -98,7 +98,7 @@
@@ -30,7 +30,7 @@ index fee7b1a..7960926 100644
 +/* _PyObject_GC_IS_TRACKED was removed from Python 3.9, re-add it;
 + * see PEP 620 and https://github.com/pythoncapi/pythoncapi_compat */
 +#include "pythoncapi_compat.h"
-+#define _PyObject_GC_IS_TRACKED PyObject_GC_IsTracked
++#define _PyObject_GC_IS_TRACKED(o) PyObject_GC_IsTracked((PyObject*)(o))
 +#endif
  #endif
  
