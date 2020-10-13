@@ -1,7 +1,7 @@
-From 95ee980043db8cc01b65b17c30a99bfab5996dc9 Mon Sep 17 00:00:00 2001
+From 8ce0313d1fa16216a16f4861131d8f7f8175c235 Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Sat, 11 Apr 2020 22:59:14 +0200
-Subject: [PATCH 1/3] remove (obsolete) if-guards that confuse MSVC
+Subject: [PATCH 1/4] remove (obsolete) if-guards that confuse MSVC
 
 ---
  blist/_blist.c | 8 --------
@@ -36,5 +36,5 @@ index f7fcb60..fee7b1a 100644
                          return _ob(NULL);
                  }
 -- 
-2.24.0.windows.2
+2.26.2.windows.1
 

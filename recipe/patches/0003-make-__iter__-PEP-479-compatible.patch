@@ -1,7 +1,7 @@
-From 5f4229c5f5ebba28f4a2066948fa5e2dec410209 Mon Sep 17 00:00:00 2001
+From 9bc8c811fa39ac2e78328999ac87b129a444962d Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Sun, 12 Apr 2020 21:00:06 +0200
-Subject: [PATCH 3/3] make __iter__ PEP-479-compatible
+Subject: [PATCH 3/4] make __iter__ PEP-479-compatible
 
 ---
  blist/_sortedlist.py | 13 ++++++++-----
@@ -32,5 +32,5 @@ index b34f69e..1f77170 100644
  def safe_cmp(f):
      def g(self, other):
 -- 
-2.24.0.windows.2
+2.26.2.windows.1
 
